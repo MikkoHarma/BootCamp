@@ -1,0 +1,2 @@
+https://github.com/MikkoHarma/BootCamp.git
+git@github.com:MikkoHarma/BootCamp.git
