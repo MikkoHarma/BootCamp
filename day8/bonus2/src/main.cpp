@@ -4,8 +4,13 @@
 int main(){
 
     pcapOpenner pcap;
-
-    std::cout << pcap.initPCAP("../data/dump") << std::endl;
+    _pcap_packet packet;
     
+    (pcap.initPCAP("../data/dump")) == true ? std::cout << "Initialized: ok" << std::endl : std::cout << "Initialization failed" << std::endl;
+
+    packet = pcap.getPacket();
+
+    std::cout << "Packet size: " << packet.data_len << std::endl;
+
     return 0;
 }

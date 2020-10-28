@@ -3,10 +3,13 @@
 #file, changes all instances of “Volvo” to “The Best Company Ever” .
 # Hint : Look into wget and sed
 
-# https://sv.wikipedia.org/wiki/Volvo
+# tested with https://sv.wikipedia.org/wiki/Volvo
 
+#get page from argument store to file
 wget $1 -O output.html
-sed "s/Volvo/The Best Company Ever/ig" output.html > output_transformed.html
-firefox --new-instance -url ${0%/*}/output_transformed.html
 
-#file:///home/mikko/work/SWBootCamp/day8/bonus1/output_transformed.html
+#Replace Volvo with the bes.. i=case insensitive g=global
+sed "s/Volvo/The Best Company Ever/ig" output.html > output_transformed.html
+
+#open file in browser if installed
+firefox --new-instance -url ${0%/*}/output_transformed.html
