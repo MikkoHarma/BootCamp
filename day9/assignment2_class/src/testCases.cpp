@@ -13,6 +13,7 @@ void runTestSuite(){
     testSpeedNormal(); //positive test  
     testCrashNormalNoCrash(); //positive test  
     testCrashNormalCrash(); //positive test    
+    
 }
 
 void testSpeedMin(){   //Test vehicle speed min

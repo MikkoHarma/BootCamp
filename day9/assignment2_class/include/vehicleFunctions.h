@@ -22,5 +22,4 @@ class vehicleFunctions{
         void setDistance(uint16_t fr, uint16_t re, uint16_t lf, uint16_t rt) { this->_pack.distfront = fr; this->_pack.distrear = re; 
         this->_pack.distleft = lf; this->_pack.distright = rt; };
 };
-
 #endif

@@ -3,5 +3,4 @@
 
 const int speedMaxValue = 512;
 const int distanceMaxValue = 2048;
-
 #endif

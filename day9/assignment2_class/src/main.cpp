@@ -19,6 +19,5 @@ int main(){
     std::cout << vf.detectCrash() << std::endl;
 
   //  runTestSuite();
-
     return 0;
 }

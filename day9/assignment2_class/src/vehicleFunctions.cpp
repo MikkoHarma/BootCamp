@@ -27,6 +27,7 @@ uint16_t vehicleFunctions::detectCrash() {
             crashData |= (0x1 << (x+12)) & 0xF000; // return  crashed sensors 0-3
         }
     }
+    
     return crashData;
 }
 
