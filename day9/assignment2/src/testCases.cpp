@@ -6,10 +6,6 @@
 
 void runTestSuite(){
 
-    DistancePack dist;
-    std::bitset<16> responseB; 
-    uint16_t response;    
-
     testSpeedMin(); //negative test
     testSpeedMax(); //negative test
     testSpeedNormal(); //positive test  
@@ -28,7 +24,7 @@ void testSpeedMin(){   //Test vehicle speed min
             std::cout << "Vehicle speed min passed: " << response << std::endl;         
 } 
 
-void testSpeedMax(){   //Test vehicle speed max
+void testSpeedMax(){  //Test vehicle speed max
  
     DistancePack dist;
     uint16_t response;     

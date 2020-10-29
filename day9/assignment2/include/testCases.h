@@ -1,3 +1,5 @@
+//test functions
+
 void runTestSuite();
 void testSpeedMin();
 void testSpeedMax();
