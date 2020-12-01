@@ -1,0 +1,169 @@
+https://github.com/MikkoHarma/BootCamp.git
+git@github.com:MikkoHarma/BootCamp.
+
+BootCamp
+https://github.com/mrashidz/CXX_Course_Demo.git
+
+Check memory
+valgrind a.out
+
+Check segment error
+g++ -g ref.cpp
+gdb ./a.out
+
+g++ -g x.cpp x.cpp -o outname
+
+Classes
+Constructor never return anything
+Constructor same as class name
+constructor/deconstructor = default/delete
+Childs to call parent constructor in constructor
+virtual (diamond problem) ambiguost function call
+
+Polymorphism
+pointer to base class (not child)
+need virtual fucntion 
+
+Class static varianbles in code outside class
+
+//Always
+#ifndef _INCLUDE_H_ (name of header fil)
+#define _INCLUDE_H_
+#endif (end of header)
+
+
+//not return in middle of function only in end //readability
+//use const when no need of modification Class::Func(const int input bla lla)
+//destructor as virtual function in "interface" classes
+//new -delete always clean up. destructor
+
+// check for memory leaks
+valgrind 
+
+//check for linking/addresses
+nm
+
+//libraries naming static libXXX.a shared libXXX.so
+//linking order right to left
+//c functions in c++ use extern "C" function_name()
+//compile share libraries --shared -fPIC (PIC positio indep code)
+//library names -lname (libc.so -> -lc)
+//for shared library path
+// export LD_LIBRARY_PATH =. (local to each terminal)
+make / cmake (CMakeList.txt) -> Makefile
+
+//rm -rf //remove recursive remove
+//touch bla.txt create text
+// cat bla.txt show content //less, tail 
+//find / -name "" // support regular expression
+//grep find content in files // grep -rnI "#include*" 
+//tree
+
+//sh a.txt $0 filename $1, $2 arguments to file . 
+// $(run command inside) script
+
+git add / status
+
+//gdb main // br (line), 
+
+<cassert>
+release assert no function  -DNDEBUG -03 (optimization)
+debug -g assert (report)
+normal assert (report)
+
+
+sudo modprobe vcan
+
+sudo ip link add dev vcan0 type vcan
+sudo ip link set up vcan0
+sudo ip link show vcan0
+5: vcan0: <NOARP,UP,LOWER_UP> mtu 72 qdisc noqueue state UNKNOWN mode DEFAULT group default qlen 1000 link/can 
+sudo apt install can-utils
+
+candump 
+
+0 development enviroment setup, project requirement analysis performed, backlog populated
+1 demo whole data pipeline using stubs - from receive input from user to sending CAN, simulator/emulator detailed designed understood
+2 simulator/emulator implementation
+3 back log refinment
+
+
+g++ gtk.cpp  `pkg-config --cflags gtk+-3.0` -o exa `pkg-config --libs gtk+-3.0`
+
+-lpthreads
+
+std::thread()
+
+CAN tunneling over Ethernet
+https://github.com/mguentner/cannelloni
+
+Threads spavn, join
+Async tasks lambdas, promise, future
+
+Templates
+
+IPC
+
+zmq, Boost - Shared memory/Kernel messaging
+
+sysV faster shared memory -slower semaphore vs posix
+
+Most eff
+sysV for memory, posix for semaphore
+
+sudo apt-get install cppcheck
+cppcheck --enable=all /Directory /Directory
+
+LLVM (clang)
+sudo apt install llvm clang clang-tools
+build folder/
+scan-build cmake ..
+scan-build -o scanbuild make
+
+clang tidy
+cmake -DCMAKE_EXPORT_COMPILE_COMANDS=1
+clang tidy -p  . $(find ../dir/ -name *.cpp) $(find ../dir -name *.h) --checks=* --export-fixes=fixes.yml >> output.txt
+
+source file NOLINT
+
+Code checḱer
+
+Cpplint
+pip install cpplint (from PyPi)
+
+g++ -Wall
+
+Valgrind (cachegrind, callgrind, massif, helgrind, drd, more)
+
+uftrace 
+graph tracer simple profiler
+
+orbit (gogle)
+
+clang sanitizers
+
+fuzzy
+AFL (american fuzzy lop) automated testing for crashing , finding crash
+
+gcov
+
+preprossesor
+if, undef, define, elif (else if), else, endif
+
+## concat
+# to string (inside quotes)
+
+
+Step by step guide to start debugging in vscode
+
+Note that this is the stupid way of doing this and there's probably a better way by also configuring your tasks.json
+
+    Create your binary with debug flags.
+    If you do this with g++ just add -g when compiling.
+    If you are doing this with CMake add the line set(CMAKE_BUILD_TYPE Debug)
+    In your workspace folder add a launch.json file by choosing Run->Add Configuration... Note, this file should be located in your ${workspaceFolder}/.vscode
+    In the "program" key, add the path to you binary. Easiest way of doing this is right clicking on your binary created in step 1, and choose Copy Relative Path. Paste after the variable workspaceFolder.
+    Here's an example: "program": "${workspaceFolder}/Lecture9/2nd/build/2nd" where 2nd is the binary
+    Change the stopAtEntry key to true to not get lost when you start debugging.
+    Now press F5 and you should be good to go!
+
