@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.5.1)
+project(Assignment2)
+include_directories(include)
+set(SOURCE_DIR src/)
+add_executable(main ${SOURCE_DIR}main.cpp ${SOURCE_DIR}vehicleFunctions.cpp ${SOURCE_DIR}testCases.cpp)
